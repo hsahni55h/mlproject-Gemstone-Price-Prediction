@@ -1,3 +1,9 @@
+"""
+This file contains utility functions used across the project. 
+It includes functionality to save objects to disk, ensuring that important objects such as models and preprocessors can be persisted and later retrieved.
+
+"""
+
 import os
 import sys
 
@@ -35,7 +41,7 @@ def save_object(file_path, obj):
         # Raise a custom exception if any error occurs
         raise Custom_Exception(e, sys)
     
-def evaluate_models(X_train, y_train, X_test, y_test, models, param):
+def evaluate_models(X_train, y_train, X_test, y_test, models):
     """
     Evaluate multiple models and return a report with their performance on the test set.
 
@@ -58,7 +64,6 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
 
         for i in range(len(list(models))):
             model = list(models.values())[i]
-            para = param[list(models.keys())[i]]
 
            # Train model
             model.fit(X_train,y_train)

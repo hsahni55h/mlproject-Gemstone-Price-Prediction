@@ -113,7 +113,7 @@ class DataTransformation:
 
             logging.info('Obtaining preprocessing object')
 
-            preprocessing_obj = self.get_data_transformation_object()
+            preprocessing_obj = self.get_data_transformer_object()
 
             target_column_name = 'price'
             drop_columns = [target_column_name,'id']
